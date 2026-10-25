@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Students Database CRUD Application
 
 A robust, beginner-friendly backend REST API built with **Python 3**, **FastAPI**, and **SQLite** for managing student records. This project demonstrates clean layered architecture, strict schema validation using **Pydantic v2**, parameterized database queries to prevent SQL injection, unified error formatting, and a complete automated test suite using **pytest**.
@@ -261,7 +260,3 @@ students-crud-app/
 - [x] Idempotent seed script (`scripts/seed_data.py`) functional.
 - [x] No personal data, real student data, or secrets committed.
 - [x] Documentation complete with setup, execution, and API testing instructions.
-=======
-# student-crud-app
-student CRUD REST API using FastAPI and SQLite
->>>>>>> e1e32a4fdd298d98818fb21346d8098e8241f13d
