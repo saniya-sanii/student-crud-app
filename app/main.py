@@ -1,6 +1,20 @@
 """FastAPI Application entrypoint for Students Database CRUD API."""
 
+from collections.abc import AsyncGenerator
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
+
+from app.database import init_db
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
+    """Execute startup and shutdown logic for the application."""
+    # Ensure database tables and indexes exist on startup
+    init_db()
+    yield
+
 
 app = FastAPI(
     title="Students Database CRUD Application",
@@ -8,6 +22,7 @@ app = FastAPI(
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc",
+    lifespan=lifespan,
 )
 
 
